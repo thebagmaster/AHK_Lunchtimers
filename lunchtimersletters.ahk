@@ -1,3 +1,5 @@
+SetMouseDelay, 1
+
 x0 := 0
 x1 := 0
 y0 := 0
@@ -32,8 +34,10 @@ Loop
 	MouseClickDrag, L, px, py, x0+orderx, y0+ordery
 	if(orderx+x0 < x1){
 		orderx += 20
-	}else{
+	}else if(ordery+y0 < y1){
 		ordery += 30
+		orderx = 0
+	}else{
 		orderx = 0
 	}
 }
